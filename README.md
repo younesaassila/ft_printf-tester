@@ -1,3 +1,3 @@
 ```sh
-make re && make clean && cc tester.c -Iincludes -Ilibft -L. -lftprintf && clear && ./a.out
+make re && cc tester.c -Iincludes -Ilibft -L. -lftprintf && make fclean && clear && ./a.out
 ```
