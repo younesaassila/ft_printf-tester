@@ -6,7 +6,7 @@
 /*   By: yaassila <yaassila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:12:01 by yaassila          #+#    #+#             */
-/*   Updated: 2022/11/21 18:12:03 by yaassila         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:20:28 by yaassila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,22 @@ TESTER("yaassila's ft_printf tester", {
 		test(printf("%%\n") == ft_printf("%%\n"));
 		test(printf("%%, %s\n", "TEST") == ft_printf("%%, %s\n", "TEST"));
 	});
+	group("Mix", {
+		test(printf("%s%d%c\n", "John", 42, 'J') == ft_printf("%s%d%c\n",
+					"John", 42, 'J'));
+	});
 	group("WTF", {
 		test(printf("%?   d\n", 123) == ft_printf("%?   d\n", 123));
 		test(printf("%%%\n") == ft_printf("%%%\n"));
+	});
+	group("`write` error handling", {
+		int status;
+
+		dup2(STDOUT_FILENO, 3);
+		close(STDOUT_FILENO);
+		status = ft_printf("Hello World\n");
+		dup2(3, STDOUT_FILENO);
+		close(3);
+		test(status == -1);
 	});
 });
