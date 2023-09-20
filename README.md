@@ -4,15 +4,21 @@
 
 ```sh
 git clone https://github.com/younesaassila/ft_printf-tester.git
-mv ft_printf-tester/* .
+make all
+make clean
+cd ft_printf-tester
+```
+
+## Build
+
+```sh
+INCLUDE_DIR=../includes
+LIBFT_DIR=../libft
+cc -Wall -Wextra -Werror -I$INCLUDE_DIR -I$LIBFT_DIR -L.. -lftprintf -o tester tester.c
 ```
 
 ## Usage
 
-Please update the following command depending on the directory structure:
-
 ```sh
-make re && cc tester.c -Iincludes -Ilibft -L. -lftprintf && make fclean && clear && ./a.out
+./tester
 ```
-
-(Yes, it compiles with warnings.)
