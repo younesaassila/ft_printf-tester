@@ -14,7 +14,7 @@ cd ft_printf-tester
 ```sh
 INCLUDE_DIR=../includes
 LIBFT_DIR=../libft
-cc -Wall -Wextra -Werror -I$INCLUDE_DIR -I$LIBFT_DIR -L.. -lftprintf -o tester tester.c
+cc -I$INCLUDE_DIR -I$LIBFT_DIR -L.. -lftprintf -o tester tester.c
 ```
 
 ## Usage
