@@ -17,6 +17,8 @@ LIBFT_DIR=../libft
 cc -I$INCLUDE_DIR -I$LIBFT_DIR -o tester tester.c -L.. -lftprintf
 ```
 
+(Yes, it compiles with warnings.)
+
 ## Usage
 
 ```sh
