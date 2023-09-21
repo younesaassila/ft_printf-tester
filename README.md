@@ -4,8 +4,6 @@
 
 ```sh
 git clone https://github.com/younesaassila/ft_printf-tester.git
-make all
-make clean
 cd ft_printf-tester
 ```
 
@@ -14,10 +12,8 @@ cd ft_printf-tester
 ```sh
 INCLUDE_DIR=../includes
 LIBFT_DIR=../libft
-cc -I$INCLUDE_DIR -I$LIBFT_DIR -o tester tester.c -L.. -lftprintf
+make -C .. && make -C .. clean && cc -Wno-format -I$INCLUDE_DIR -I$LIBFT_DIR -o tester tester.c -L.. -lftprintf
 ```
-
-(Yes, it compiles with warnings.)
 
 ## Usage
 
