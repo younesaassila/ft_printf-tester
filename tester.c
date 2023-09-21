@@ -23,7 +23,7 @@ TESTER("yaassila's ft_printf tester", {
 		test(printf("Hello, %s!\n", NULL) == ft_printf("Hello, %s!\n", NULL));
 	});
 	group("%p", {
-		int *ptr = 42;
+		int *ptr = (int *)42;
 		char *str = "Hello, World!";
 
 		test(printf("Address: %p\n", ptr) == ft_printf("Address: %p\n", ptr));
